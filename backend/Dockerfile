@@ -7,7 +7,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN python ../data/init_db.py || python data/init_db.py || true
+RUN python data/init_db.py
 
 EXPOSE 8000
 
