@@ -13,7 +13,8 @@ export default defineConfig({
       '/api/trace-stream': {
         target: 'http://localhost:8000',
         changeOrigin: true,
-      }
+      },
+      
     }
   }
 })

@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: '/api', timeout: 60000 })
+const BASE = import.meta.env.VITE_API_URL || ''
+
+const api = axios.create({ baseURL: `${BASE}/api`, timeout: 60000 })
 
 api.interceptors.response.use(
   res => res,
@@ -36,7 +38,7 @@ export const fetchMetrics = () =>
   api.get('/metrics').then(r => r.data)
 
 export const createTraceStream = (sessionId, onStep, onError) => {
-  const source = new EventSource(`/api/trace-stream/${sessionId}`)
+  const source = new EventSource(`${BASE}/api/trace-stream/${sessionId}`)
   source.onmessage = (e) => {
     try { onStep(JSON.parse(e.data)) } catch (_) {}
   }
