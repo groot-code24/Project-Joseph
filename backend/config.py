@@ -6,7 +6,7 @@ from pathlib import Path
 
 class Settings(BaseSettings):
     anthropic_api_key: str
-    ddb_path: str = Field(default="./data/novamart.db")
+    db_path: str = Field(default="./data/novamart.db")
     policy_path: str = Field(default="./data/refund_policy.md")
     model_name: str = Field(default="claude-opus-4-8")
     max_agent_iterations: int = Field(default=8)
@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     log_level: str = Field(default="INFO")
 
     model_config = {
-        "env_file": ("../.env", ".env"),
+        "env_file": (".env",),
         "env_file_encoding": "utf-8",
         "extra": "ignore",
         "protected_namespaces": (),
@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     def get_policy_text(self) -> str:
         p = Path(self.policy_path)
         if not p.exists():
-            p = Path(__file__).parent.parent / "data" / "refund_policy.md"
+            p = Path(__file__).parent / "data" / "refund_policy.md"
         return p.read_text(encoding="utf-8")
 
 
