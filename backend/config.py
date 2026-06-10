@@ -5,10 +5,10 @@ from pathlib import Path
 
 
 class Settings(BaseSettings):
-    anthropic_api_key: str
+    groq_api_key: str
     db_path: str = Field(default="./data/novamart.db")
     policy_path: str = Field(default="./data/refund_policy.md")
-    model_name: str = Field(default="claude-opus-4-8")
+    model_name: str = Field(default="llama-3.3-70b-versatile")
     max_agent_iterations: int = Field(default=8)
     backend_port: int = Field(default=8000)
     allow_all_origins: bool = Field(default=True)
