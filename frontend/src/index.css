@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+.prose-nova p { color: #e2e8f0; margin: 0 0 0.5rem 0; }
+.prose-nova p:last-child { margin-bottom: 0; }
+.prose-nova strong { color: #f1f5f9; }
+.prose-nova ul { margin: 0 0 0.5rem 1rem; list-style: disc; }
+.prose-nova li { color: #e2e8f0; }
+.prose-nova code {
+  background: #0d1117; padding: 1px 5px; border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: #4ade80;
+}
+@keyframes blink { 0%,100% {opacity:1} 50% {opacity:0} }
+.typing-dot { animation: blink 1.2s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pulse-dot { 0%,100% {opacity:1} 50% {opacity:0.3} }
+.pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
