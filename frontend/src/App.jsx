@@ -32,7 +32,7 @@ export default function App() {
         <div className="text-sm text-nova-muted">AI Refund Agent</div>
         <div className="flex items-center gap-2 text-xs text-nova-muted">
           <Circle size={8} className="fill-nova-green text-nova-green" />
-          <span className="font-mono">claude-opus-4-8 Live</span>
+          <span className="font-mono">Groq Llama</span>
         </div>
       </header>
 

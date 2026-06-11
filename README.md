@@ -8,7 +8,7 @@ Built with FastAPI + raw Anthropic tool-calling (no LangGraph, no Docker) and a 
 
 | Layer | Tech |
 |-------|------|
-| Model | `claude-sonnet` |
+| Model | `Groq llama` |
 | Backend | FastAPI · SQLite (aiosqlite) · sse-starlette |
 | Frontend | React 18 · Vite · Tailwind CSS |
 | Agent | Hand-rolled Anthropic tool-calling loop |
@@ -20,10 +20,6 @@ Built with FastAPI + raw Anthropic tool-calling (no LangGraph, no Docker) and a 
 - An Anthropic API key
 
 
-
-Then open **http://localhost:5173**.
-
-`start.sh` creates a virtualenv, installs backend and frontend dependencies, seeds the SQLite database (idempotent), and launches both servers. Press `Ctrl+C` to stop both cleanly.
 
 | Service | URL |
 |---------|-----|
@@ -57,7 +53,6 @@ Prompt-injection attempts, emotional appeals, threats, and authority claims are 
 
 ```
 refund-agent/
-├── start.sh                single-command runner
 ├── data/                   policy, schema + seed, db init
 ├── backend/                FastAPI app, agent loop, policy guard, tools
 └── frontend/               React UI (chat, admin trace, policy viewer)
